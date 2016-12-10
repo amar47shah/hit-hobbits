@@ -1,36 +1,42 @@
 # hit-hobbits
 
-FIXME: description
+Hit a hobbit once or a specified number of times
 
-## Installation
+## Run
 
-Download from http://example.com/FIXME.
+    $ lein run
+    Hit you in the chest!
 
-## Usage
+    $ lein run 2
+    Hit you in the back!
+    Hit you in the right hand!
+    I think you've had enough.
 
-FIXME: explanation
+    $ lein run 1
+    Hit you in the left lower leg!
+    I think you've had enough.
 
-    $ java -jar hit-hobbits-0.1.0-standalone.jar [args]
+    $ lein run 0
+    I think you've had enough.
 
-## Options
+## Compile and Run
 
-FIXME: listing of options this app accepts.
+    $ lein uberjar
+    Compiling hit-hobbits.core
+    Created /Users/amar/Code/hit-hobbits/target/uberjar/hit-hobbits-0.1.0-SNAPSHOT.jar
+    Created /Users/amar/Code/hit-hobbits/target/uberjar/hit-hobbits-0.1.0-SNAPSHOT-standalone.jar
 
-## Examples
+    $ java -jar ./target/uberjar/hit-hobbits-0.1.0-SNAPSHOT-standalone.jar
+    Hit you in the back!
 
-...
+    $ java -jar ./target/uberjar/hit-hobbits-0.1.0-SNAPSHOT-standalone.jar 2
+    Hit you in the left kidney!
+    Hit you in the right shoulder!
+    I think you've had enough.
 
-### Bugs
+    $ java -jar ./target/uberjar/hit-hobbits-0.1.0-SNAPSHOT-standalone.jar 1
+    Hit you in the right knee!
+    I think you've had enough.
 
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+    $ java -jar ./target/uberjar/hit-hobbits-0.1.0-SNAPSHOT-standalone.jar 0
+    I think you've had enough.
