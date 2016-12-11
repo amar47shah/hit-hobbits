@@ -50,10 +50,10 @@
                              {:name "left-foot" :size 2}])
 
 (defn matching-part
-  [part]
+  [left-part]
   (let
-    [match #(clojure.string/replace % #"^left-" "right-")]
-    {:name (match (:name part)) :size (:size part)}))
+    [right-part (#(clojure.string/replace % #"^left-" "right-") (:name left-part))]
+    (assoc left-part :name right-part)))
 
 (defn symmetrize-body-parts
   "Expects a seq of maps that have a :name and :size"
