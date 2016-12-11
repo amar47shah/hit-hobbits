@@ -55,13 +55,12 @@
     [match #(clojure.string/replace % #"^left-" "right-")]
     {:name (match (:name part)) :size (:size part)}))
 
-(defn better-symmetrize-body-parts
+(defn symmetrize-body-parts
   "Expects a seq of maps that have a :name and :size"
   [asym-body-parts]
   (reduce #(into %1 (set [%2 (matching-part %2)])) [] asym-body-parts))
 
-(def sym-hobbit-body-parts (better-symmetrize-body-parts asym-hobbit-body-parts))
-
+(def sym-hobbit-body-parts (symmetrize-body-parts asym-hobbit-body-parts))
 (def hobbit-body-targets (body-targets sym-hobbit-body-parts))
 
 (defn -main
